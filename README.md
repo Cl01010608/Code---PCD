@@ -244,7 +244,44 @@ Actualmente en **Fase de Consolidación EDA** con los siguientes logros:
 
 
 
+# Análisis y Conclusiones
+## Conclusión Analítica del Análisis Exploratorio de Datos (EDA)
 
+El análisis exploratorio de datos (EDA) revela información crucial sobre el **potencial de energía solar en Colombia**, identificando distribuciones, correlaciones, y patrones geográficos que son fundamentales para la planificación energética y la toma de decisiones.
+
+---
+
+### Distribución y Características de las Variables
+
+Los histogramas de la **Distribución de Variables de Energía Solar** muestran lo siguiente:
+
+* **Irradiación Difusa (DIF)**: Presenta una distribución relativamente simétrica y estrecha alrededor de su media ($\approx 901.5$), indicando una **baja variabilidad** (Std: $37.9$).
+* **Irradiación Normal Directa (DNI)**: Muestra una distribución más dispersa, con una media de $\approx 1235.9$ y una **variabilidad significativamente alta** (Std: $267.1$). Esto sugiere que el DNI es la variable solar con mayor dispersión y, por lo tanto, un factor de mayor riesgo o potencial, dependiendo de la región.
+* **Producción Fotovoltaica (PVOUT)**: La producción estimada ($\text{Media} \approx 1445.2$) sigue una distribución con una cola hacia la izquierda, lo que podría indicar que una **gran parte de los municipios tienen una alta producción** o que los valores de producción más bajos son menos frecuentes.
+* **Temperatura (TEMP)**: Posee una distribución amplia y notablemente sesgada a la derecha, con la mayoría de los municipios experimentando **temperaturas más altas** ($\text{Media} \approx 20.7$, $\text{Std}: 5.3$), lo cual es relevante para la eficiencia de los paneles fotovoltaicos.
+
+---
+
+### Correlaciones entre Variables
+
+La **Matriz de Correlación** proporciona *insights* clave sobre la interdependencia de las variables:
+
+* **Producción FV (PVOUT) y DNI:** Existe una **correlación muy fuerte y positiva** ($+0.984$), lo que confirma que la **Irradiación Normal Directa es el factor dominante** que impulsa la producción de energía fotovoltaica en Colombia. Las regiones con alto DNI tendrán el mayor PVOUT.
+* **DIF y DNI/PVOUT:** La Irradiación Difusa tiene una **correlación negativa** tanto con DNI ($\approx -0.393$) como con PVOUT ($\approx -0.273$). Esto es típico, ya que las regiones con cielos más despejados (alto DNI) suelen tener menor nubosidad, lo que reduce la componente difusa.
+* **Temperatura y PVOUT:** La correlación entre Temperatura y PVOUT es **positiva pero baja** ($+0.333$). Aunque la temperatura puede aumentar en las regiones soleadas, el factor determinante para la producción sigue siendo la radiación solar, mientras que el efecto negativo del calor en la eficiencia de los paneles no anula completamente la ventaja de la alta insolación.
+
+---
+
+### Potencial Geográfico y Regionalización
+
+El análisis geográfico y de *clustering* destaca la distribución heterogénea del potencial:
+
+* **Potencial Fotovoltaico (Mapa de Círculos)**: Muestra que las regiones con **potencial Alto ($> 1400 \text{ kWh/m}^2$)** se concentran principalmente en la **Región Caribe** y la **Región Andina central y oriental**.
+* **Municipios de Alta Producción (Gráfico de Barras)**: Los 20 municipios con **mayor producción FV estimada** (superando los $1700 \text{ kWh/kWp}$) se encuentran en departamentos como Santander, La Guajira, y Cesar, como lo demuestran **Guapota** y **Palmas del Socorro**. Estas son las ubicaciones **óptimas** para la inversión en grandes plantas solares.
+* **Municipios de Baja Producción (Gráfico de Barras)**: Los municipios con **menor producción** (cerca de $1050 \text{ kWh/kWp}$) se encuentran principalmente en zonas de la costa Pacífica y partes de la Amazonía, como **El Carmen de Atrato** y **Ricaurte**, que probablemente experimentan mayor nubosidad o menor radiación.
+* **Clustering (Mapa de Puntos Agrupados)**: La clasificación regional (**Clusters de Potencial Energético**) confirma que el **"Excelente Potencial" (púrpura/rojo)** se ubica predominantemente en el **norte de Colombia** y partes de la región andina central (Boyacá, Santander), mientras que el **"Bajo Potencial" (azul)** se localiza en las vastas regiones de la **Amazonía y el Orinoco**, y el **"Bajo" a "Moderado" (rojo/naranja)** en la **Costa Pacífica**.
+
+El análisis demuestra que el **alto potencial de energía fotovoltaica en Colombia se concentra en la región Andina oriental y el Caribe**, fuertemente correlacionado con una alta **Irradiación Normal Directa (DNI)**. Esta información es esencial para la **Identificación óptima de ubicaciones** y la **Estimación precisa de ROI** que se espera del proyecto, permitiendo dirigir las inversiones hacia las zonas de mayor rendimiento.
 
 ## Contacto
 
