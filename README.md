@@ -28,7 +28,7 @@ Los datos provienen del Global Solar Atlas 2.0 con información satelital proces
 ## Estructura del Proyecto
 
 ```
-├── CODE-PCD/
+├── user_input_files/
 │   ├── Revicion_Inicial.ipynb     # Notebook de revisión inicial de datos
 │   └── ProyectoEDA.ipynb          # Notebook con análisis exploratorio completo
 ├── airflow_pipeline/
@@ -65,7 +65,7 @@ Los datos provienen del Global Solar Atlas 2.0 con información satelital proces
 
 ## Tecnologías Utilizadas
 
-- **Python 3.10.18**
+- **Python 3.x**
 - **Pandas** - Manipulación de datos
 - **NumPy** - Operaciones numéricas
 - **Matplotlib/Seaborn** - Visualización de datos
@@ -142,6 +142,135 @@ El análisis genera los siguientes outputs:
 
 Los datos están bajo **Creative Commons CC BY 4.0**, con origen en **Solargis (2021)** y publicados en la plataforma del Banco Mundial.
 
+## Estado del Proyecto
+
+**Fecha actual:** 8 de octubre de 2025
+
+### ✅ Fases Completadas
+
+- **Fase 1: Revisión Inicial** - Exploración preliminar de datos GeoTIFF
+- **Fase 2: EDA Completo** - Análisis exploratorio detallado con pipeline automatizado
+- **Fase 3: Pipeline Airflow** - Implementación de flujos automatizados para EDA
+
+### 🚧 Estado Actual
+
+Actualmente en **Fase de Consolidación EDA** con los siguientes logros:
+
+- ✅ Pipeline de EDA automatizado funcionando
+- ✅ Análisis estadístico completo de 1,118 municipios
+- ✅ Identificación de patrones geográficos de radiación solar
+- ✅ Clustering de municipios por características solares
+- ✅ Análisis de componentes principales (PCA)
+- ✅ Sistema de visualizaciones automatizado
+
+## 🎯 Próximos Pasos
+
+### Fase 4: Desarrollo de Modelo Predictivo (Planificado)
+
+**Objetivo:** Desarrollar modelos de machine learning para predicción de potencial solar
+
+#### 4.1 Preparación de Datos para Modelado
+- [ ] Feature engineering de variables temporales
+- [ ] Integración de datos meteorológicos adicionales
+- [ ] Creación de variables lag y rolling statistics
+- [ ] Normalización y escalado de features
+
+#### 4.2 Desarrollo de Modelos
+- [ ] **Modelos de Regresión**
+  - Regresión lineal múltiple
+  - Random Forest Regressor
+  - Gradient Boosting (XGBoost, LightGBM)
+  - Support Vector Regression
+
+- [ ] **Modelos de Clasificación**
+  - Clasificación de zonas de alto/medio/bajo potencial
+  - Identificación de ubicaciones óptimas para instalaciones
+
+#### 4.3 Validación y Optimización
+- [ ] Validación cruzada temporal
+- [ ] Hyperparameter tuning
+- [ ] Evaluación de métricas (RMSE, MAE, R²)
+- [ ] Análisis de residuos y sesgo
+
+#### 4.4 Implementación y Despliegue
+- [ ] API para predicciones en tiempo real
+- [ ] Dashboard interactivo para visualización
+- [ ] Sistema de alertas para oportunidades
+- [ ] Documentación técnica completa
+
+### Fase 5: Validación con Datos Reales (Futuro)
+- [ ] Comparación con instalaciones existentes
+- [ ] Validación con estaciones meteorológicas
+- [ ] Refinamiento de modelos basado en feedback
+
+## 📊 Métricas del Proyecto
+
+### Datos Procesados
+- **Municipios analizados:** 1,118
+- **Departamentos cubiertos:** 32
+- **Variables solares:** 7 principales (DIF, DNI, GHI, GTI, OPTA, PVOUT, TEMP)
+- **Período de datos:** 1994-2018 (24 años)
+- **Resolución espacial:** 9-120 arc-segundos
+
+### Outputs Generados
+- **Reportes:** 8 reportes automatizados
+- **Visualizaciones:** 12+ gráficos y mapas de calor
+- **Modelos de clustering:** 4 clusters identificados
+- **Componentes PCA:** 95% varianza explicada en 5 componentes
+
+## 🛠️ Tecnologías Planificadas para Modelo Predictivo
+
+- **Scikit-learn** - Modelos tradicionales de ML
+- **XGBoost/LightGBM** - Gradient boosting avanzado
+- **TensorFlow/PyTorch** - Deep learning (LSTM, Neural Networks)
+- **Prophet** - Forecasting de series temporales
+- **Optuna** - Optimización de hiperparámetros
+- **MLflow** - Tracking de experimentos
+- **FastAPI** - API para serving de modelos
+- **Streamlit/Dash** - Dashboard interactivo
+
+## 📈 Impacto Esperado
+
+### Beneficios del Modelo Predictivo
+
+1. **Planificación Energética**
+   - Identificación óptima de ubicaciones para plantas solares
+   - Estimación precisa de ROI en proyectos solares
+   - Optimización de capacidad instalada
+
+2. **Toma de Decisiones**
+   - Soporte para políticas públicas energéticas
+   - Evaluación de viabilidad de proyectos
+   - Priorización de inversiones en infraestructura
+
+3. **Reducción de Riesgos**
+   - Predicción de variabilidad estacional
+   - Identificación de factores críticos
+   - Análisis de sensibilidad climática
+
+## 🔄 Metodología de Desarrollo
+
+### Enfoque Iterativo
+1. **Desarrollo incremental** de modelos
+2. **Validación continua** con métricas definidas
+3. **Feedback loops** para mejora constante
+4. **Documentación en tiempo real**
+
+### Control de Calidad
+- **Code reviews** para todos los modelos
+- **Testing automatizado** de pipelines
+- **Versionado** de modelos y datos
+- **Monitoreo** de performance en producción
+
+## 📋 Cronograma Estimado
+
+- **Octubre 20 2025:** Finalización EDA y preparación datos
+- **Octubre 30 2025:** Desarrollo modelos base
+- **Noviembre 15 2025:** Optimización y validación
+- **Noviembre 15 2026:** Producto Minimo
+
 ## Contacto
 
-Para preguntas o colaboraciones, contactar al equipo del proyecto.
+Para preguntas o colaboraciones sobre el proyecto de energía solar, contactar al equipo de desarrollo.
+
+*Este proyecto forma parte del análisis de potencial de energía solar en Colombia utilizando datos satelitales de alta calidad y técnicas avanzadas de machine learning para predicción de rendimiento solar.*
