@@ -31,12 +31,8 @@ Los datos provienen del Global Solar Atlas 2.0 con información satelital proces
 ├── Scripts/
 │   ├── Revicion_Inicial.ipynb     # Notebook de revisión inicial de datos
 │   └── ProyectoEDA.ipynb          # Notebook con análisis exploratorio completo
-├── airflow_pipeline/
-│   └── eda_solar_pipeline.py      # Pipeline de Airflow para EDA automatizado
 ├── data/
 │   └── resultados_municipios.csv  # Datos agregados por municipio
-├── output/
-│   └── [resultados del pipeline]
 └── README.md
 ```
 
@@ -133,7 +129,6 @@ Actualmente en **Fase de Consolidación EDA** con los siguientes logros:
 #### 4.1 Preparación de Datos para Modelado
 - [ ] Feature engineering de variables temporales
 - [ ] Integración de datos meteorológicos adicionales
-- [ ] Creación de variables lag y rolling statistics
 - [ ] Normalización y escalado de features
 
 #### 4.2 Desarrollo de Modelos
@@ -171,7 +166,6 @@ Actualmente en **Fase de Consolidación EDA** con los siguientes logros:
 - **Departamentos cubiertos:** 32
 - **Variables solares:** 7 principales (DIF, DNI, GHI, GTI, OPTA, PVOUT, TEMP)
 - **Período de datos:** 1994-2018 (24 años)
-- **Resolución espacial:** 9-120 arc-segundos
 
 ### Outputs Generados
 - **Visualizaciones:** 12+ gráficos y mapas de calor
