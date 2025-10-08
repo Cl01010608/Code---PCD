@@ -229,6 +229,23 @@ Actualmente en **Fase de Consolidación EDA** con los siguientes logros:
 - **Noviembre 15 2025:** Optimización y validación
 - **Noviembre 15 2026:** Producto Minimo
 
+ ## Airflow
+ | Orden | Task ID                               | Descripción                                                                                                                 | Input                                   | Output                                         | Dependencias                   |
+| :---: | :------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------- | :--------------------------------------------- | :----------------------------- |
+|   1   | `get_raw_data`                        | Carga los archivos base (raster de potencial solar, shapefile de municipios).                                               | Archivos `.tif`, `.shp` en `/data/raw/` | Datos crudos en memoria o carpeta temporal     | —                              |
+|   2   | `preprocess_raster`                   | Procesa y estandariza los archivos raster (reproyección, recorte, máscara).                                                 | Raster original                         | Raster limpio y alineado en `/data/processed/` | get_raw_data                   |
+|   3   | `merge_with_municipalities`           | Une los valores del raster con las áreas de los municipios.                                                                 | Raster limpio + shapefile               | GeoDataFrame con valores por municipio         | preprocess_raster              |
+|   4   | `aggregate_data`                      | Calcula estadísticas agregadas (media, suma, desviación) del potencial solar por municipio.                                 | GeoDataFrame con valores por pixel      | DataFrame tabular por municipio                | merge_with_municipalities      |
+|   5   | `eda_analysis`                        | Análisis exploratorio: distribución, correlaciones, mapas y gráficas.                                                       | DataFrame final por municipio           | Visualizaciones y conclusiones EDA             | aggregate_data                 |
+|   6   | `save_clean_dataset`                  | Guarda el dataset final limpio y consolidado para análisis posteriores.                                                     | DataFrame tabular                       | Archivo `.csv` o `.parquet` en `/data/final/`  | aggregate_data                 |
+|   7   | `model_training` *(siguiente paso)*   | Entrena modelo predictivo (p. ej. regresión o ML) para estimar potencial en municipios sin datos o bajo escenarios futuros. | Dataset limpio                          | Modelo entrenado (`.pkl`, `.joblib`)           | save_clean_dataset             |
+|   8   | `model_validation` *(siguiente paso)* | Evalúa el modelo: métricas (MAE, RMSE, R²), validación cruzada y ajuste.                                                    | Modelo entrenado + dataset de prueba    | Reporte de desempeño del modelo                | model_training                 |
+|   9   | `generate_report` *(opcional final)*  | Crea un informe automatizado (PDF/HTML) con resultados EDA, modelo y validación.                                            | Resultados EDA + métricas de validación | Reporte final en `/reports/`                   | eda_analysis, model_validation |
+
+
+
+
+
 ## Contacto
 
 Para preguntas o colaboraciones sobre el proyecto de energía solar, contactar al equipo de desarrollo.
