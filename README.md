@@ -74,52 +74,14 @@ Los datos provienen del Global Solar Atlas 2.0 con información satelital proces
 - **GeoPandas** - Análisis geoespacial
 - **Apache Airflow** - Orquestación de pipelines
 
-## Pipeline de Airflow
-
-El pipeline automatizado incluye las siguientes tareas:
-
-1. **Validación de datos** - Verificación de integridad
-2. **Limpieza de datos** - Tratamiento de valores faltantes
-3. **Análisis estadístico** - Generación de estadísticas descriptivas
-4. **Análisis de correlaciones** - Matriz de correlación
-5. **Detección de outliers** - Identificación de valores atípicos
-6. **Visualizaciones** - Generación de gráficos
-7. **Clustering** - Agrupación de municipios
-8. **PCA** - Análisis de componentes principales
-9. **Reporte final** - Consolidación de resultados
 
 ## Instalación y Uso
 
 ### Prerrequisitos
 
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn rasterio geopandas apache-airflow
+pip install pandas numpy matplotlib seaborn scikit-learn rasterio geopandas
 ```
-
-### Ejecución del Pipeline
-
-1. **Configurar Airflow:**
-```bash
-export AIRFLOW_HOME=~/airflow
-airflow db init
-airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com
-```
-
-2. **Copiar el pipeline:**
-```bash
-cp airflow_pipeline/eda_solar_pipeline.py $AIRFLOW_HOME/dags/
-```
-
-3. **Iniciar Airflow:**
-```bash
-airflow webserver --port 8080
-airflow scheduler
-```
-
-4. **Ejecutar el DAG desde la interfaz web de Airflow**
-
-### Ejecución Manual
-
 ```bash
 # Ejecutar notebook de revisión inicial
 jupyter notebook user_input_files/Revicion_Inicial.ipynb
@@ -136,7 +98,6 @@ El análisis genera los siguientes outputs:
 - **Visualizaciones** de distribuciones y correlaciones
 - **Mapas de calor** de variables solares
 - **Clusters** de municipios con características similares
-- **Reporte consolidado** con hallazgos principales
 
 ## Licencia
 
@@ -150,7 +111,7 @@ Los datos están bajo **Creative Commons CC BY 4.0**, con origen en **Solargis (
 
 - **Fase 1: Revisión Inicial** - Exploración preliminar de datos GeoTIFF
 - **Fase 2: EDA Completo** - Análisis exploratorio detallado con pipeline automatizado
-- **Fase 3: Pipeline Airflow** - Implementación de flujos automatizados para EDA
+- **Fase 3: Pipeline** - Implementación de flujos para EDA
 
 ### 🚧 Estado Actual
 
@@ -213,7 +174,6 @@ Actualmente en **Fase de Consolidación EDA** con los siguientes logros:
 - **Resolución espacial:** 9-120 arc-segundos
 
 ### Outputs Generados
-- **Reportes:** 8 reportes automatizados
 - **Visualizaciones:** 12+ gráficos y mapas de calor
 - **Modelos de clustering:** 4 clusters identificados
 - **Componentes PCA:** 95% varianza explicada en 5 componentes
