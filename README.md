@@ -65,7 +65,7 @@ Los datos provienen del Global Solar Atlas 2.0 con información satelital proces
 
 ## Tecnologías Utilizadas
 
-- **Python 3.x**
+- **Python 3.10.18**
 - **Pandas** - Manipulación de datos
 - **NumPy** - Operaciones numéricas
 - **Matplotlib/Seaborn** - Visualización de datos
