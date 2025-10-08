@@ -240,7 +240,7 @@ Actualmente en **Fase de Consolidación EDA** con los siguientes logros:
 |   6   | `save_clean_dataset`                  | Guarda el dataset final limpio y consolidado para análisis posteriores.                                                     | DataFrame tabular                       | Archivo `.csv` o `.parquet` en `/data/final/`  | aggregate_data                 |
 |   7   | `model_training` *(siguiente paso)*   | Entrena modelo predictivo (p. ej. regresión o ML) para estimar potencial en municipios sin datos o bajo escenarios futuros. | Dataset limpio                          | Modelo entrenado (`.pkl`, `.joblib`)           | save_clean_dataset             |
 |   8   | `model_validation` *(siguiente paso)* | Evalúa el modelo: métricas (MAE, RMSE, R²), validación cruzada y ajuste.                                                    | Modelo entrenado + dataset de prueba    | Reporte de desempeño del modelo                | model_training                 |
-|   9   | `generate_report` *(opcional final)*  | Crea un informe automatizado (PDF/HTML) con resultados EDA, modelo y validación.                                            | Resultados EDA + métricas de validación | Reporte final en `/reports/`                   | eda_analysis, model_validation |
+|   9   | `generate_report` *(Presentacion final)*  | Crea un informe automatizado (PDF/HTML) con resultados EDA, modelo y validación.                                            | Resultados EDA + métricas de validación | Reporte final en `/reports/`                   | eda_analysis, model_validation |
 
 
 
