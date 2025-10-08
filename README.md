@@ -28,7 +28,7 @@ Los datos provienen del Global Solar Atlas 2.0 con información satelital proces
 ## Estructura del Proyecto
 
 ```
-├── user_input_files/
+├── Scripts/
 │   ├── Revicion_Inicial.ipynb     # Notebook de revisión inicial de datos
 │   └── ProyectoEDA.ipynb          # Notebook con análisis exploratorio completo
 ├── airflow_pipeline/
