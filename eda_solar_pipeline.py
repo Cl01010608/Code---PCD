@@ -56,7 +56,7 @@ dag = DAG(
     'eda_solar_pipeline',
     default_args=default_args,
     description='Pipeline EDA para datos de energía solar Colombia',
-    schedule_interval=timedelta(days=1),
+    schedule=timedelta(days=1),
     tags=['eda', 'solar', 'colombia', 'analytics']
 )
 
